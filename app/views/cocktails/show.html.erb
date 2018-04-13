@@ -10,9 +10,9 @@
 <h1 class="ingredients">Ingredients :</h1>
 <div class="container-form-body">
   <h2 class="card-title">
-  <% @cocktail.doses.each do |i| %>
-  <%= i.amount %>
-  <%= i.description %>
+    <% @cocktail.doses.each do |i| %>
+    <%= i.amount %>
+    <%= i.description %>
   </h2>
   <% end %>
 </div>
@@ -20,4 +20,4 @@
   <div class="btn-form"><%= link_to "Back to Cocktails", cocktails_path, class:"margin-btn" %>
     <%= link_to 'Destroy', @cocktail, method: :delete, data: { confirm: 'Are you sure?' }, class:"margin-btn" %></div>
   </div>
-
+</div>
