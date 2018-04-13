@@ -4,16 +4,20 @@
 <div class="container-form-header">
   <div class="banner">
     <%=image_tag "https://source.unsplash.com/1500x400//?{cocktail}"%>
-    <h1 class="new-cocktail">Add a new Cocktail</h1>
+    <h1 class="new-cocktail"><%= @cocktail.name %></h1>
   </div>
-</div><%= render 'number_of_doses_form' %>
-
-<p id="notice"><%= notice %></p>
-
-  <% if @cocktail.doses %>
-    <% @cocktail.doses.each do |dose| %>
-      <p><%= "#{dose.amount} #{dose.ingredient.name} :#{dose.description}" %></p>
-    <% end %>
-  <% else %>
+</div>
+<h1 class="ingredients">Ingredients :</h1>
+<div class="container-form-body">
+  <h2 class="card-title">
+  <% @cocktail.doses.each do |i| %>
+  <%= i.amount %>
+  <%= i.description %>
+  </h2>
   <% end %>
-</p>
+</div>
+<div class="container-footer">
+  <div class="btn-form"><%= link_to "Back to Cocktails", cocktails_path, class:"margin-btn" %>
+    <%= link_to 'Destroy', @cocktail, method: :delete, data: { confirm: 'Are you sure?' }, class:"margin-btn" %></div>
+  </div>
+

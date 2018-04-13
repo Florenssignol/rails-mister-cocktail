@@ -25,7 +25,7 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.find(params[:id])
     @cocktail.destroy
 
-    redirect_to cocktails_path, notice: "This cocktail has been deleted."
+    redirect_to cocktails_path
   end
 
   private
