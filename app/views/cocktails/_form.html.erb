@@ -8,8 +8,6 @@
   </div>
 </div>
 <div class="container-form-body">
-<!--   <div class="row">
-    <div class="col-xs-1"> -->
       <%= simple_form_for @cocktail, html: { class: "text-center"} do |f| %>
       <%= f.error_notification %>
       <div class="form-inputs">
@@ -23,7 +21,5 @@
       <div class="btn-form"><%= link_to "Back to Cocktails", cocktails_path, class:"margin-btn" %>
       <%= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' }, class:"margin-btn" %></div>
     </div>
-<!--   </div>
-</div> -->
 <% end %>
 
