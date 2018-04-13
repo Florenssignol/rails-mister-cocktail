@@ -1,2 +1,19 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+<thead>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Pacifico" rel="stylesheet">
+</thead>
+<div class="container-form-header">
+  <div class="banner">
+    <%=image_tag "https://source.unsplash.com/1500x400//?{cocktail}"%>
+    <h1 class="new-cocktail">Add a new Cocktail</h1>
+  </div>
+</div><%= render 'number_of_doses_form' %>
+
+<p id="notice"><%= notice %></p>
+
+  <% if @cocktail.doses %>
+    <% @cocktail.doses.each do |dose| %>
+      <p><%= "#{dose.amount} #{dose.ingredient.name} :#{dose.description}" %></p>
+    <% end %>
+  <% else %>
+  <% end %>
+</p>

@@ -1,25 +1,37 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Cocktails</h1>
+<h1 class="main-title">Cocktails</h1>
 
 <table>
   <thead>
-    <tr>
-      <th>Name</th>
-    </tr>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Pacifico" rel="stylesheet">
   </thead>
 
   <tbody>
-    <% @cocktails.each do |cocktail| %>
-      <tr>
-        <td><%= cocktail.name %></td>
-        <td><%= link_to 'Show', cocktail %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+    <div class="container">
+      <div class="row">
+        <% @cocktails.each do |cocktail| %>
+        <div class="col-xs-12 col-md-4 col-lg-3">
+          <div class="card">
+            <%=image_tag "https://source.unsplash.com/600x700//?{cocktail},{#{cocktail.id}}", class:"card-img-top"%>
+            <div class="card-body">
+              <h2 class="card-title"><%= cocktail.name %></h2>
+              <div class="btn-center text-center">
+                <div class="btn-index"><%= link_to 'Show', cocktail %></div>
+              <div class="btn-index"><%= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %></div></div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Cocktail', new_cocktail_path %>
+<div class="footer">
+<div class="footer-btn"> <%= link_to 'Add a new Cocktail', new_cocktail_path, class:"bottom-btn"%></div>
+</div>

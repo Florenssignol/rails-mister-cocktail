@@ -4,4 +4,6 @@ class Dose < ApplicationRecord
 
   validates :description, presence: true, allow_nil: false
   validates :ingredient, uniqueness: {scope: :cocktail_id}
+
+    attr_accessor :number
 end

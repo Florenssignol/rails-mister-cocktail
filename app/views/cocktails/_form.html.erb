@@ -1,11 +1,29 @@
-<%= simple_form_for(@cocktail) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :name %>
+<thead>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Pacifico" rel="stylesheet">
+</thead>
+<div class="container-form-header">
+  <div class="banner">
+    <%=image_tag "https://source.unsplash.com/1500x400//?{cocktail},{#{cocktail.id}}"%>
+    <h1 class="new-cocktail">Add a new Cocktail</h1>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+</div>
+<div class="container-form-body">
+<!--   <div class="row">
+    <div class="col-xs-1"> -->
+      <%= simple_form_for @cocktail, html: { class: "text-center"} do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs">
+        <%= f.input :name %>
+      </div>
+      <div class="form-actions form-button">
+        <%= f.button :submit, class:"background-button"%>
+      </div>
+          </div>
+          <div class="container-footer">
+      <div class="btn-form"><%= link_to "Back to Cocktails", cocktails_path, class:"margin-btn" %>
+      <%= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' }, class:"margin-btn" %></div>
+    </div>
+<!--   </div>
+</div> -->
 <% end %>
+

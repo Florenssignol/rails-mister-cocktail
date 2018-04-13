@@ -1,0 +1,12 @@
+<div class="container-form-body">
+
+      <%= simple_form_for @cocktail, url: new_cocktail_dose_path(@cocktail), html: { class: "text-center"}, method: :get do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs">
+        <%= f.input :number, as: :select, collection: [1, 2, 3, 4, 5] %>
+      </div>
+      <div class="form-actions form-button">
+        <%= f.button :submit, class:"background-button"%>
+      </div>
+          </div>
+<% end %>

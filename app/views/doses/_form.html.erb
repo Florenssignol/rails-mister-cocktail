@@ -1,12 +1,34 @@
-<%= simple_form_for(@dose) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :amount %>
-    <%= f.input :description, as: :text %>
+<thead>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Pacifico" rel="stylesheet">
+</thead>
+<div class="container-form-header">
+  <div class="banner">
+    <%=image_tag "https://source.unsplash.com/1500x400//?{cocktail}"%>
+    <h1 class="new-cocktail">Add a new Dose</h1>
   </div>
+</div>
+<div class="container-form-body">
+<!--   <div class="row">
+  <div class="col-xs-1"> -->
+   <%= simple_form_for [@cocktail, @dose], html: { class: "text-center"} do |f| %>
+   <%= f.error_notification %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+    <%= simple_fields_for :other do |o| %>
+      <div class="form-inputs">
+        <%= o.input :number, as: :hidden, input_html: { value: "#{@number}" } %>
+        <% @number.times do |i| %>
+          <%= o.input "id #{i}".to_sym, as: :select, collection: @ingredients %>
+          <%= o.input "amount #{i}" %>
+          <%= o.input "description #{i}".to_sym, as: :text %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <div class="form-actions form-button">
+      <%= f.button :submit, class:"background-button"%>
+    </div>
+  <% end %>
+</div>
+
+
+
