@@ -16,10 +16,10 @@ class DosesController < ApplicationController
     #     ingredient_id: final_params["id #{i}"],
     #     cocktail: @cocktail
     #   )
-      if !@dose.save
-        render :new
-      end
-    end
+      # if !@dose.save
+      #   render :new
+      # end
+    # end
     redirect_to cocktails_path(@cocktail)
   end
 
