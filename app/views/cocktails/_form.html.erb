@@ -1,5 +1,5 @@
 <thead>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Pacifico" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Pacifico" rel="stylesheet">
 </thead>
 <div class="container-form-header">
   <div class="banner">
@@ -19,11 +19,11 @@
         <% end %>
       </div>
       <div class="links">
-        <%= link_to_add_association 'add dose', f, :doses %>
+        <%= link_to_add_association 'add doses', f, :doses%>
       </div>
     </div>
     <div class="form-actions form-button">
-      <%= f.submit class:"background-button"%>
+      <%= f.submit "Create this cocktail", class:"background-button"%>
     </div>
   <% end %>
 </div>

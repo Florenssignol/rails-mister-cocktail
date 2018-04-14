@@ -55,15 +55,33 @@
 }
 
 .form-button {
-  opacity: 0.5;
-  display: inline-block;
-  font-family: "Open Sans Condensed", sans-serif;
-  margin-bottom: 90px;
+  color: #77567A;
+  font-size: 40px;
+  text-align: center;
+  font-family: "Pacifico", cursive;
+  padding-top: 60px;
 }
 
 .background-button {
-  background-color: #8C798E;
+  background-color: transparent;
+  border: none;
 }
+
+// .form-button {
+//   opacity: 0.5;
+//   display: inline-block;
+//   font-family: "Open Sans Condensed", sans-serif;
+//   margin-bottom: 90px;
+// }
+
+// .form-button input {
+//   color: #251A26;
+// }
+
+// .background-button {
+//   color: #251A26;
+//   background-color: #8C798E;
+// }
 
 .btn-form a {
   color: #77567A;
@@ -71,8 +89,8 @@
   // text-align: center;
   font-family: "Open Sans Condensed", sans-serif;
   display: inline-block;
-  // border-width: 90px;
-  // margin-bottom: 50px;
+  // padding-top: 50px;
+  margin-top: 120px;
 }
 
 .btn-form a:hover {
@@ -92,3 +110,33 @@
   margin: 50px;
 }
 
+.add_fields {
+  color: #990F00;
+  font-size: 20px;
+  text-align: center;
+  font-family: "Pacifico", cursive;
+}
+
+.add_fields a {
+  color: #990F00;
+  text-decoration: none;
+}
+
+.nested-fields {
+  background-color: rgba(163, 51, 39, 0.4);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.remove_fields {
+  color: #990F00;
+  font-size: 20px;
+  text-align: center;
+  font-family: "Pacifico", cursive;
+}
+
+.remove_fields a {
+  color: #990F00;
+  text-decoration: none;
+}

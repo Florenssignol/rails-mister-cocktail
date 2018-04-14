@@ -6,3 +6,20 @@
   padding-top: 5px;
   margin-top: 2px;
 }
+
+.container-form-body {
+  height: 300px;
+  flex-direction: column;
+}
+
+.show-ingredients {
+  text-align: center;
+  color: #624764;
+  font-size: 20px;
+}
+
+.show-amount {
+  text-align: center;
+  color: #624764;
+  font-size: 30px;
+}
