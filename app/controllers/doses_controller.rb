@@ -2,21 +2,20 @@ class DosesController < ApplicationController
   def new
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new
-    @number = params[:cocktail][:number].to_i
+    # @number = params[:cocktail][:number].to_i
     @ingredients = Ingredient.all
   end
 
   def create
     final_params = dose_params
     @cocktail = Cocktail.find(params[:cocktail_id])
-    final_params[:number].to_i.times do |i|
-      @dose = Dose.new(
-        amount: final_params["amount #{i}"],
-        description: final_params["description #{i}"],
-        ingredient_id: final_params["id #{i}"],
-        cocktail: @cocktail
-      )
-
+    # final_params[:number].to_i.times do |i|
+    #   @dose = Dose.new(
+    #     amount: final_params["amount #{i}"],
+    #     description: final_params["description #{i}"],
+    #     ingredient_id: final_params["id #{i}"],
+    #     cocktail: @cocktail
+    #   )
       if !@dose.save
         render :new
       end

@@ -3,23 +3,39 @@
 </thead>
 <div class="container-form-header">
   <div class="banner">
-    <%=image_tag "https://source.unsplash.com/1500x400//?{cocktail},{#{cocktail.id}}"%>
+    <%=image_tag "https://source.unsplash.com/1500x400//?{cocktail}"%>
     <h1 class="new-cocktail">Add a new Cocktail</h1>
   </div>
 </div>
 <div class="container-form-body">
-      <%= simple_form_for @cocktail, html: { class: "text-center"} do |f| %>
-      <%= f.error_notification %>
-      <div class="form-inputs">
-        <%= f.input :name %>
+  <%= simple_form_for @cocktail, html: { class: "text-center"} do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <div id="doses">
+        <%= f.simple_fields_for :doses do |dose| %>
+          <%= render 'dose_fields', f: dose %>
+        <% end %>
       </div>
-      <div class="form-actions form-button">
-        <%= f.button :submit, class:"background-button"%>
+      <div class="links">
+        <%= link_to_add_association 'add dose', f, :doses %>
       </div>
-          </div>
-          <div class="container-footer">
-      <div class="btn-form"><%= link_to "Back to Cocktails", cocktails_path, class:"margin-btn" %>
-      <%= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' }, class:"margin-btn" %></div>
     </div>
-<% end %>
+    <div class="form-actions form-button">
+      <%= f.submit class:"background-button"%>
+    </div>
+  <% end %>
+</div>
+<div class="container-footer">
+  <div class="btn-form">
+    <%= link_to "Back to Cocktails", cocktails_path, class:"margin-btn" %>
+    <%= link_to 'Destroy', @cocktail, method: :delete,
+      data: { confirm: 'Are you sure?' },
+      class: "margin-btn"
+    %>
+  </div>
+</div>
+
+
 

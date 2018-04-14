@@ -9,11 +9,13 @@
 </div>
 <h1 class="ingredients">Ingredients :</h1>
 <div class="container-form-body">
+  <% @cocktail.doses.each do |i| %>
   <h2 class="card-title">
-    <% @cocktail.doses.each do |i| %>
+    <%= i.ingredient.name %>
     <%= i.amount %>
     <%= i.description %>
   </h2>
+  <br />
   <% end %>
 </div>
 <div class="container-footer">
